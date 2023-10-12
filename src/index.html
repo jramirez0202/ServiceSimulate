@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+		<script type='module' src='../javascript/serviceSimulator.js'defer></script>
+    <script type='module' src='../javascript/actions.js' defer></script>
+    <title>Services Simulator</title>
+ </head>
+ <body>
+  <section>
+    <div class="container">
+      <h1 class="text-3xl font-bold">Simulador de servicios</h1>
+      <br>
+      <!-- <button id='clickMe'>click me</button> -->
+      <!-- <button id='tryMe'>Random</button> -->
+      <button type="button" id ="darkMode" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2">Dark Mode</button>
+      
+      <button id="reloadButton" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Borrar historial</button>
+    </div>
+
+
+
+    <div class="serviceInfo sm:flex">
+      <div class="sm:w-1/2">
+        <h2 class="text-2xl font-bold">Selecciona un servicio</h2>
+        <select id="serviceSelect" class="mx-auto m-5 text-sm rounded-lg focus:ring-blue-500 block w-1/3 p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
+      </div>
+      
+      <div class="sm:w-1/3 mt-4 sm:mt-0">
+        <ul class="list-disc pl-4 mb-2 text-1xl font-bold tracking-tight list-none">
+          <li id="kindService">Servicio: </li>
+          <li id="priceHour">Precio por hora: </li>
+        </ul>
+        
+        
+        <div id="inputHours" class="mb-2 text-1xl font-bold tracking-tight">
+          <label for="horas">Horas Solicitadas:</label>
+          <br>
+          <input type="number" class="custom-input" id="hours">
+          <div id="errorMessage" class="text-red-600"></div>
+          <br>
+          <button id="submitHours" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2">Simular</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="max-w-sm p-6 bg-white mx-auto my-4 border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+      <div id="quoteInfo" class="mx-auto">
+        <div>
+          <h2 class="m-2 text-3xl text-white font-bold underline text-center">Historial de servicio</h2>
+          <div id="simulatePrice" class="text-red-500 text-center"></div>
+        </div>
+          
+      </div>
+      <div id="quoteContainer" class="container dark:bg-gray-800 font-bold"></div>
+    </div>
+
+  </section>
+</body>
+ </html>

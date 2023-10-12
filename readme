@@ -1,0 +1,31 @@
+Esto es un idea general de mi camino a desarrollar (pueden haber ajustes)
+Simulador de precios por servicios
+Fase 1
+concepto general
+Un simuador que permita calcular el costo de un servico de cualquier tipo segun las demandas que el servicio requiera.
+
+Yo como prestador de servicios debo cobrar un monto por hora, por dia, por semana, por mes, o por proyecto.
+El servicio inciialmente constara de 
+
+Costo por hora: este dependera del servcio prestado y lo establecera el prestador de servcio o segun el mercado al que se quiera entrar.
+
+Diagnostico: este variable va depnder del servicio que se quiera prestar en base al tiempo que puede tomar entender el problema y buscar una posible solucion. (este costo puede ser asumido por el prestador de servicos o no)
+
+Costo por dia: Costo que tendra la jornada diaria de trabajo, esto puede ser varible ya que un dia de trabajo puede ser 8 horas fijas. Este calculo se de debe iterar ya que puede tener muchas variables como horas extras o part time.
+
+costo por semanas: a partir de una semana el costo podria permitir un descuento por semanas, por ejemplo 10% si solicitan 4 semanas de trabajo.
+
+Tarifa diferente de fines de semana: esto esta por desarrollarse
+
+Descuentos: estos descuentos corresponderan al prestador de servicios ya que si solitan un proyecto de +4 semanas poder efrecer una tarifa de descuento que benefie al solictante. este descuento debe ser aplicado al total de la factura
+
+Cobro por insumos: esto es en el caso de que el servicio requiera reposicion de componentes (por desarrollar)
+
+Costo diferentes por el tipo de lenguage de desarrollar: Esto esta por desarrollar, pero un ejemplo general seria hacer una pagina web puede tener un costo en wordpress y otro costo en react u otro costo si es fullstack. 
+
+
+
+arrays de objetos
+objetos
+haciendo un bucle
+funciones de orden superior

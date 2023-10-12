@@ -1,0 +1,15 @@
+{
+  "name": "services-simulator",
+  "version": "1.0.0",
+  "description": "Esto es un idea general de mi camino a desarrollar (pueden haber ajustes) Simulador de precios por servicios Fase 1 concepto general Un simuador que permita calcular el costo de un servico de cualquier tipo segun las demandas que el servicio requiera.",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
