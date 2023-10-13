@@ -137,22 +137,4 @@ submitHours.addEventListener('click', displayQuoteInfo);
 darkMode.addEventListener('click', response)
 
 
-// let p = new Promise((resolve, reject) => {
-//     let sum = 1 + 1
-//   if(sum == 2) {
-//     resolve('Successs')
-//   } else {
-//     reject('Failed')
-//   }
-// })
-
-
-
-p.then((message) => {
-  console.log("Esto es positivo " + message)
-}).catch((message) => {
-  console.log('this is the catch ' + message)
-})
-
-
 
