@@ -6,12 +6,12 @@
 
 body {
   background-color: rgb(166, 248, 248);
-  color: rgb(255, 255, 255);
+  color: rgb(11, 48, 83);
 }
 
 body.dark-mode {
   background-color: rgb(0, 0, 0);
-  color:rgb(0, 0, 0)
+  color:rgb(247, 242, 242)
 }
 
 input.custom-input {
@@ -36,7 +36,7 @@ input.custom-input {
   
 }
 
-.container {
+.container.dark-mode {
   text-align: center;
   background-color: #58c0d3;
   padding: 20px;

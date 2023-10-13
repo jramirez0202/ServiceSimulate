@@ -2,20 +2,14 @@ import { simulatePriceHours } from './serviceSimulator.js';
 const serviceShown = new Set();
 const reloadButton = document.getElementById('reloadButton');
 const darkMode = document.getElementById('darkMode');
-// let tryMe = document.getElementById('tryMe');
-// events //
-// Calcula la suma de 2 numeros ///
-// let click = document.getElementById('clickMe')
 
-// const calculate = (a, b) => {
-//   const suma = a + b
-// console.log(suma)
-// };
+// mostras menu hamburguesa del menu responsive////
+const toggleButton = document.querySelector('[data-collapse-toggle="navbar-user"]');
+const menu = document.querySelector('#navbar-user');
 
-// click.addEventListener('click', () => {
-//   calculate(1,2)
-// })
-
+toggleButton.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+});
 
 // refresh sessionStorage
 reloadButton.addEventListener('click', function() {
@@ -24,6 +18,46 @@ reloadButton.addEventListener('click', function() {
     location.reload();
   }
 });
+
+//instructions modal //
+
+  // Define las funciones openModal y closeModal
+  function openModal(modalId) {
+    let modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = "block";
+    } else {
+      console.error("Modal not found: " + modalId);
+    }
+  }
+  
+  function closeModal(modalId) {
+    let modal = document.getElementById(modalId);
+    if (modal) {
+      modal.style.display = "none";
+    } else {
+      console.error("Modal not found: " + modalId);
+    }
+  }
+  
+  // Agrega un evento de clic al botón que abre el modal
+  document.getElementById("openMediumModal").addEventListener("click", function () {
+    openModal("medium-modal");
+  });
+  
+  // Agrega un evento de clic a los botones que abren y cierran los modales
+  document.addEventListener("click", function (e) {
+    if (e.target && e.target.getAttribute("data-modal-toggle")) {
+      openModal(e.target.getAttribute("data-modal-toggle"));
+    }
+    if (e.target && e.target.getAttribute("data-modal-hide")) {
+      closeModal(e.target.getAttribute("data-modal-hide"));
+    }
+  });
+  
+
+
+
 
 // genera un numero random entre 1 y 100 //
 // function generarNumeroAleatorio() {
@@ -100,18 +134,17 @@ const displayQuoteInfo = () => {
 
 // Calculate Event  //
 submitHours.addEventListener('click', displayQuoteInfo);
-// tryMe.addEventListener('click', clearAndReplace);
 darkMode.addEventListener('click', response)
 
 
-let p = new Promise((resolve, reject) => {
-    let sum = 1 + 1
-  if(sum == 2) {
-    resolve('Successs')
-  } else {
-    reject('Failed')
-  }
-})
+// let p = new Promise((resolve, reject) => {
+//     let sum = 1 + 1
+//   if(sum == 2) {
+//     resolve('Successs')
+//   } else {
+//     reject('Failed')
+//   }
+// })
 
 
 
