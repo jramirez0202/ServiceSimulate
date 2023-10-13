@@ -1,6 +1,4 @@
 import services from "../javascript/services.js";
-
-
   const serviceSelect = document.getElementById('serviceSelect');
   const priceHour = document.getElementById('priceHour');
   const inputHours = document.getElementById('hours');

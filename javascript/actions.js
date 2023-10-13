@@ -22,6 +22,8 @@ reloadButton.addEventListener('click', function() {
 //instructions modal //
 
   // Define las funciones openModal y closeModal
+
+
   function openModal(modalId) {
     let modal = document.getElementById(modalId);
     if (modal) {
@@ -54,21 +56,7 @@ reloadButton.addEventListener('click', function() {
       closeModal(e.target.getAttribute("data-modal-hide"));
     }
   });
-  
 
-
-
-
-// genera un numero random entre 1 y 100 //
-// function generarNumeroAleatorio() {
-//   const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
-//   console.log(numeroAleatorio);
-// }
-
-// function clearAndReplace() {
-//   console.clear();
-//   generarNumeroAleatorio();
-// }
 
 // Change Dark mode ///
 
