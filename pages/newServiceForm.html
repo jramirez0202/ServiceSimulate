@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../src/output.css">
+  <script type='module' src='../javascript/actions.js' defer></script>
+  <script src="../javascript/navbarActions.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <title>new Service</title>
+</head>
+<body>
+  <header>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark-mode">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex items-center">
+          <img src="../assets/images/profile.jpeg" class="h-16 mr-3" alt="Flowbite Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ServiCraft</span>
+      </a>
+      <div class="flex items-center md:order-2">
+        <div id="darkMode" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 rounded-full w-10 h-10 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2">
+          <button type="button" class="text-sm px-2 pb-1 items-center justify-center ml-1 mt-1">
+              <i class="fas fa-moon"></i>
+          </button>
+        </div>
+
+            <!-- Dropdown menu -->
+            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+            </div>
+            <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+              <svg class="w-5 h-5" aria-hidden="true">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+            </button>
+          </div>
+
+      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+        <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <li>
+            <a href="../index.html" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="./newServiceForm.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Servicios</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container dark-mode bg-gradient-to-r from-blue-500 to-blue-300 text-white py-16 text-center">
+      <h1 class="text-3xl font-bold">Simulador de servicios</h1>
+      <br>
+      <button id="openServiceForm" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2">
+        Formulario
+      </button>
+      <button id="openMediumModal" data-modal-toggle="medium-modal" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2">
+        instrucciones
+      </button>
+      <button id="reloadButton" class="text-white bg-gradient-to-r from-red-800 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Borrar historial</button>
+
+    </div>
+  </section>
+
+  <section>
+    <div id="formModal" class="modal hidden">
+      <div class="modal-content mt-auto mb-auto">
+        <form action="" id="serviceForm" class="dark:bg-red-700 mx-auto rounded-lg px-5 py-3 mt-10 mb-10 md:w-1/3">
+          <div class="grid gap-6 mb-6 md:grid-cols-2">
+              <div>
+                  <label for="firstName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                  <input type="text" id="firstName" name="firstName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John">
+              </div>
+              <div>
+                  <label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categoria</label>
+                  <input type="text" id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe">
+              </div>
+              <div>
+                  <label for="serviceType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Servicio</label>
+                  <input type="text" id="serviceType" name="serviceType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Servicio">
+              </div>  
+              <div>
+                  <label for="priceHour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Costo por hora</label>
+                  <input type="number" id="priceHour" name="priceHour" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Cantidad de horas" pattern="[0-9]{1,3}" >
+              </div>
+          </div>
+          <div class="mb-6">
+              <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email de contacto</label>
+              <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="example@user.com">
+          </div> 
+    
+          <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+          
+          <button type="button" id="closeServiceForm" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 close">Cerrar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="serviceInfo sm:flex bg-gradient-to-r from-blue-500 to-blue-300 text-white py-16 text-center">
+      <div class="sm:w-1/2">
+        <h2 class="text-2xl font-bold dark-mode">Selecciona un servicio</h2>
+        <select id="categorySelect" class="mx-auto m-5 text-sm rounded-lg focus:ring-blue-500 block w-1/3 p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
+      </div>
+      
+      <div class="sm:w-1/3 mt-4 sm:mt-0">
+        <ul class="list-disc pl-4 mb-2 text-1xl font-bold tracking-tight list-none">
+          <li id="kindService">Servicio: </li>
+          <li id="priceHour">Precio por hora: </li>
+        </ul>
+        <div id="inputHours" class="mb-2 text-1xl font-bold tracking-tight">
+          <label for="horas">Horas Solicitadas:</label>
+          <br>
+          <input type="number" class="custom-input" id="hours">
+          <div id="errorMessage" class="text-red-600"></div>
+          <br>
+          <button id="submitHours" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2">Simular</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="max-w-sm p-6 bg-white mx-auto my-4 border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+      <div id="quoteInfo" class="mx-auto">
+        <div>
+          <h2 class="m-2 text-3xl text-white font-bold underline text-center">Historial de servicio</h2>
+          <div id="simulatePrice" class="text-red-500 text-center"></div>
+        </div>
+      </div>
+      <div id="quoteContainer" class="container dark:bg-gray-800 font-bold"></div>
+    </div>
+  </section>
+
+  <section>
+    <div id="medium-modal" tabindex="-1" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 hidden w-full max-w-lg overflow-x-hidden overflow-y-auto h-auto">
+      <div class="relative w-full max-h-full">
+          <!-- Modal content -->
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+              <!-- Modal header -->
+              <div class="flex items-center justify-between p-5 border-b rounded-t dark:border-gray-600">
+                  <h3 class="text-xl font-medium text-gray-900 dark:text-white">
+                      instrucciones
+                  </h3>
+              </div>
+              <!-- Modal body -->
+              <div class="p-6 space-y-6">
+                  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    Bienvenido al Software de ServiCraft. Este software está diseñado para ayudarte a cotizar y estimar el costo de un servicio específico que necesitas. Aquí tienes unas instrucciones para el uso del simulador:
+                  </p>
+                  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    En esta página encontrarás una lista de categorias de servicios disponibles. Selecciona la categoria que necesitas cotizar haciendo clic en su nombre.
+                  </p>
+                  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Al seleccionarla veras los servicios relacionados a la categoria seleccionada y el precio por hora que el prestador del servicio sugiere. </p>
+                  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Ahora solo debes ingresar las horas para cotizar el costo</p>
+              </div>
+              <!-- Modal footer -->
+              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                  <button data-modal-hide="medium-modal" type="button" class="text-white bg-blue-700 hover-bg-blue-800 focus-ring-4 focus-outline-none focus-ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark-bg-blue-600 dark-hover-bg-blue-700 dark-focus-ring-blue-800">Entendido</button>
+                  <!-- <button data-modal-hide="medium-modal" type="button" class="text-gray-500 bg-white hover-bg-gray-100 focus-ring-4 focus-outline-none focus-ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover-text-gray-900 focus-z-10 dark-bg-gray-700 dark-text-gray-300 dark-border-gray-500 dark-hover-text-white dark-hover-bg-gray-600 dark-focus-ring-gray-600"></button> -->
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,15 +1,8 @@
 import { simulatePriceHours } from './serviceSimulator.js';
 const serviceShown = new Set();
 const reloadButton = document.getElementById('reloadButton');
-const darkMode = document.getElementById('darkMode');
+const submitHours = document.querySelector('#submitHours');
 
-// mostras menu hamburguesa del menu responsive////
-const toggleButton = document.querySelector('[data-collapse-toggle="navbar-user"]');
-const menu = document.querySelector('#navbar-user');
-
-toggleButton.addEventListener('click', () => {
-  menu.classList.toggle('hidden');
-});
 
 // refresh sessionStorage
 reloadButton.addEventListener('click', function() {
@@ -21,9 +14,7 @@ reloadButton.addEventListener('click', function() {
 
 //instructions modal //
 
-  // Define las funciones openModal y closeModal
-
-
+  // Define las funciones open y close
   function openModal(modalId) {
     let modal = document.getElementById(modalId);
     if (modal) {
@@ -58,18 +49,25 @@ reloadButton.addEventListener('click', function() {
   });
 
 
-// Change Dark mode ///
+  // Modal create service //
+// Abre el modal al hacer clic en el botón "Formulario"
+document.getElementById("openServiceForm").addEventListener("click", function () {
+  document.getElementById("formModal").style.display = "block";
+});
 
-function response() {
-  const body = document.body
-  if (body.classList.contains('dark-mode')) {
-      body.classList.remove('dark-mode')
-      darkMode.textContent ='Dark Mode'
-  } else {
-    body.classList.add('dark-mode')
-    darkMode.textContent= 'Ligth Mode'
+// Cierra el modal al hacer clic en la "X"
+document.getElementById("closeServiceForm").addEventListener("click", function () {
+  document.getElementById("formModal").style.display = "none";
+});
+
+// Cierra el modal si se hace clic fuera del modal
+window.onclick = function (event) {
+  let modal = document.getElementById("formModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-}
+};
+
 
 // Historial de servicio //
 
@@ -120,9 +118,15 @@ const displayQuoteInfo = () => {
   }
 }
 
+// form Create service //
+
+
+
+
+
 // Calculate Event  //
 submitHours.addEventListener('click', displayQuoteInfo);
-darkMode.addEventListener('click', response)
+
 
 
 

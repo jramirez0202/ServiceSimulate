@@ -1,5 +1,6 @@
 import services from "../javascript/services.js";
-  const serviceSelect = document.getElementById('serviceSelect');
+
+  const categorySelect = document.getElementById('categorySelect'); // Agrega la referencia al select
   const priceHour = document.getElementById('priceHour');
   const inputHours = document.getElementById('hours');
   const kindService = document.getElementById('kindService');
@@ -9,13 +10,18 @@ import services from "../javascript/services.js";
 
 
   // Agregar opciones al elemento select
-  services.forEach(service => {
-    const option = document.createElement('option');
-    option.value = service.id;
-    option.textContent = service.category;
-    
-    serviceSelect.appendChild(option);
-  });
+  populateServiceSelect();
+  
+  function populateServiceSelect() {
+    categorySelect.innerHTML = ''; // Limpiar el select
+  
+    services.forEach((service) => {
+      const option = document.createElement('option');
+      option.value = service.id;
+      option.textContent = service.category;
+      categorySelect.appendChild(option);
+    });
+  }
 
 
   let selectedServicePrice = 0; // Variable para almacenar el precio del servicio seleccionado
@@ -23,7 +29,7 @@ import services from "../javascript/services.js";
 
   function serviceId() {
     result.textContent = ""  
-    const selectedServiceId = parseInt(serviceSelect.value);
+    const selectedServiceId = parseInt(categorySelect.value);
     // find service //
     const selectedService = services.find(service => service.id === selectedServiceId);
 
@@ -42,6 +48,8 @@ import services from "../javascript/services.js";
       return 0;
     }
   }
+
+  
   export const simulatePriceHours = () => {
     errorMessage.textContent = "";
     console.clear("");
@@ -72,7 +80,7 @@ import services from "../javascript/services.js";
   serviceId();
   
   // Agrega un evento de cambio al elemento select para que se actualice la información al seleccionar un servicio
-  serviceSelect.addEventListener('change', serviceId);
+  categorySelect.addEventListener('change', serviceId);
 
 
 

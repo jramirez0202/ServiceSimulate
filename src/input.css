@@ -63,4 +63,8 @@ input.custom-input {
   color: #fff;
 }
 
+.fa, .fas, .size {
+  font-weight: 900;
+  margin: auto;
+}
 
