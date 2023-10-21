@@ -25,10 +25,10 @@ import services from "../javascript/services.js";
 
 
   let selectedServicePrice = 0; // Variable para almacenar el precio del servicio seleccionado
-  let showKindService = ""
+  let showKindService = "";
 
   function serviceId() {
-    result.textContent = ""  
+
     const selectedServiceId = parseInt(categorySelect.value);
     // find service //
     const selectedService = services.find(service => service.id === selectedServiceId);
@@ -58,7 +58,7 @@ import services from "../javascript/services.js";
     // Validacion + Convertir el objeto en una cadena JSON y guardarlo en el storage //
     if (!isNaN(numHours) && !isNaN(selectedServicePrice) && (numHours >= 1)) {
       const totalPrice = selectedServicePrice * numHours;
-      result.textContent = `El costo total por ${numHours}H del servicio ${showKindService} es de $${totalPrice}`;
+      // result.textContent = `El costo total por ${numHours}H del servicio ${showKindService} es de $${totalPrice}`;
       
       const quotes = {
         showKindService: showKindService,
@@ -67,10 +67,10 @@ import services from "../javascript/services.js";
       };
       const quotesJSON = JSON.stringify(quotes);
       sessionStorage.setItem('quoteService', quotesJSON);
+      document.getElementById('hours').value = '';
   
       return totalPrice;
     } else {
-      result.textContent = "";
       errorMessage.textContent = "Las horas no pueden ser cero ni negativas";
       return 0;
     }

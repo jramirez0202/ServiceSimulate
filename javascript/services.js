@@ -1,4 +1,5 @@
-  // Array de servicios
+import { serviceSuccess } from "./integrations/toastify.js";
+// Array de servicios
   let services = [
     {
       id: 1,
@@ -92,8 +93,7 @@
     newOption.textContent = newService.category;
     serviceSelect.appendChild(newOption);
   
-    alert('Servicio añadido');
-    console.log(services);
+    serviceSuccess()
   });
   
 export default services;

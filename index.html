@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a Nuestra Página de Servicios</title>
+    <title>Pagina principal</title>
     <link rel="stylesheet" href="./src/output.css">
-    <script src='./javascript/navbarActions.js' defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src='./javascript/navbarActions.js' defer></script>
+    <script src='./javascript/integrations/toastify.js' defer></script>
+    <script type='module' src='../javascript/integrations/toastify.js' defer></script>
+
+    
+    
 
 </head>
 <body>
@@ -18,10 +24,11 @@
     </a>
     <div class="flex items-center md:order-2">
       <div id="darkMode" class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 rounded-full w-10 h-10 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2 mb-2">
-        <button type="button" class="text-sm px-2 pb-0.5 items-center justify-center ml-1 mt-1">
-            <!-- Icono de luna (puedes reemplazarlo con el ícono que desees) -->
+        <div class="darkModeAlert">              
+          <button id="darkMode-button" type="button" class="text-sm px-2 pb-1 items-center justify-center ml-1 mt-1">
             <i class="fas fa-moon"></i>
-        </button>
+          </button>
+        </div>
       </div>
 
       <!-- Dropdown menu -->
@@ -47,8 +54,6 @@
     </div>
     </div>
   </nav>
-
-
 
     <!-- Encabezado -->
     <header class="bg-gradient-to-r from-blue-500 to-blue-300 text-white py-16 text-center">
@@ -94,4 +99,5 @@
         </div>
     </footer>
 </body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </html>
