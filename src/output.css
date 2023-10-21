@@ -2137,14 +2137,6 @@ video {
   padding-bottom: 2rem;
 }
 
-.pb-0 {
-  padding-bottom: 0px;
-}
-
-.pb-0\.5 {
-  padding-bottom: 0.125rem;
-}
-
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -2777,6 +2769,20 @@ input.custom-input {
   margin: auto;
 }
 
+.deleteQuoteBtn{
+  color: red;
+}
+
+.toastify-custom-background {
+  background: linear-gradient(to right, #505467, #00154b);
+  color: white;
+  /* Color de texto blanco */
+  border-radius: 8px;
+  /* Bordes redondeados, ajusta según lo desees */
+  padding: 10px;
+  /* Espaciado interior */
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -3161,4 +3167,6 @@ input.custom-input {
     }
   }
 }
+
+
 

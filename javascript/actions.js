@@ -1,16 +1,19 @@
 import { simulatePriceHours } from './serviceSimulator.js';
-const serviceShown = new Set();
+import services  from '../javascript/services.js';
 const reloadButton = document.getElementById('reloadButton');
 const submitHours = document.querySelector('#submitHours');
 
 
 // refresh sessionStorage
 reloadButton.addEventListener('click', function() {
+  
   const userConfirmed = confirm("¿Desea eliminar los registros?");
   if (userConfirmed) {
     location.reload();
   }
 });
+
+
 
 //instructions modal //
 
@@ -60,15 +63,6 @@ document.getElementById("closeServiceForm").addEventListener("click", function (
   document.getElementById("formModal").style.display = "none";
 });
 
-// Cierra el modal si se hace clic fuera del modal
-window.onclick = function (event) {
-  let modal = document.getElementById("formModal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-
 // Historial de servicio //
 
 // create elements and show in DOM //
@@ -78,24 +72,51 @@ function createAndAppend(parent, text) {
   parent.appendChild(element);
 }
 
-function createInfoCard() {
-  const infoCard = document.createElement('div');
-  infoCard.classList.add('info-card');
-  return infoCard;
+function deleteService(id) {
+  // Encuentra el servicio con el mismo id en la matriz services
+  const serviceIndex = services.findIndex(service => service.id === id);
+
+  if (serviceIndex !== -1) {
+    services.splice(serviceIndex, 1);
+    
+    // Restablecer el valor del campo de entrada a una cadena vacía
+  } else {
+    console.log("Servicio no encontrado");
+  }
 }
 
-function showServiceInfo(quotes) {
-  const quoteContainer = document.getElementById('quoteContainer');
-  const infoCard = createInfoCard();
-  //esta modificacion haceque se muestren los servicios mas recientes primero 
-  quoteContainer.insertBefore(infoCard, quoteContainer.firstChild);
+
+function createInfoCard(quotes) {
+  const infoCard = document.createElement('div');
+  infoCard.classList.add('info-card');
 
   createAndAppend(infoCard, `Servicio: ${quotes.showKindService}`);
   createAndAppend(infoCard, `Cantidad de Horas: ${quotes.numHours}`);
   createAndAppend(infoCard, `Precio Total: $${quotes.totalPrice}`);
+
+  // Agrega el botón de eliminación
+  const deleteButton = document.createElement('button');
+  deleteButton.classList.add('deleteQuoteBtn');
+  deleteButton.textContent = 'Eliminar';
+  deleteButton.addEventListener('click', function() {
+    deleteService(quotes.totalPrice, services);
+    infoCard.remove(); // Remueve la tarjeta del DOM
+  });
+  infoCard.appendChild(deleteButton);
+
+  return infoCard;
+}
+
+
+function showServiceInfo(quotes) {
+  const quoteContainer = document.getElementById('quoteContainer');
+  const infoCard = createInfoCard(quotes);
+  //esta modificacion haceque se muestren los servicios mas recientes primero 
+  quoteContainer.insertBefore(infoCard, quoteContainer.firstChild);
 }
 
 // Define un conjunto para almacenar los servicios mostrados
+const serviceShown = new Set();
 
 const displayQuoteInfo = () => {
   const totalPrice = simulatePriceHours(); // Calcular el precio total
@@ -117,13 +138,6 @@ const displayQuoteInfo = () => {
     alert("Error al crear servicio");
   }
 }
-
-// form Create service //
-
-
-
-
-
 // Calculate Event  //
 submitHours.addEventListener('click', displayQuoteInfo);
 

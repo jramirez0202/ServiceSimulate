@@ -68,3 +68,16 @@ input.custom-input {
   margin: auto;
 }
 
+.deleteQuoteBtn{
+color: red;
+}
+
+.toastify-custom-background {
+  background: linear-gradient(to right, #505467, #00154b);
+  color: white; /* Color de texto blanco */
+  border-radius: 8px; /* Bordes redondeados, ajusta según lo desees */
+  padding: 10px; /* Espaciado interior */
+}
+
+
+
