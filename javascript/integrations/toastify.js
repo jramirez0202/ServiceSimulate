@@ -1,4 +1,4 @@
-export function serviceSuccess() {
+export const serviceSuccess = () => {
   Toastify({
     text: "Servicio Agregado con Exito",
     duration: 3000,

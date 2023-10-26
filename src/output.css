@@ -896,6 +896,26 @@ video {
   width: 100%;
 }
 
+.w-\[200\] {
+  width: 200;
+}
+
+.w-\[150px\] {
+  width: 150px;
+}
+
+.w-\[10px\] {
+  width: 10px;
+}
+
+.w-28 {
+  width: 7rem;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -2773,6 +2793,10 @@ input.custom-input {
   color: red;
 }
 
+.imgCard{
+  width:10%
+}
+
 .toastify-custom-background {
   background: linear-gradient(to right, #505467, #00154b);
   color: white;
@@ -2781,6 +2805,16 @@ input.custom-input {
   /* Bordes redondeados, ajusta según lo desees */
   padding: 10px;
   /* Espaciado interior */
+}
+
+img {
+  max-height: 200px;
+}
+
+.image-container  {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 @media (min-width: 640px) {
@@ -3167,6 +3201,3 @@ input.custom-input {
     }
   }
 }
-
-
-

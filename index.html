@@ -8,12 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src='./javascript/navbarActions.js' defer></script>
-    <script src='./javascript/integrations/toastify.js' defer></script>
-    <script type='module' src='../javascript/integrations/toastify.js' defer></script>
-
-    
-    
-
+    <script type="module" src='./javascript/integrations/toastify.js' defer></script>
+    <script type="module" src='./resourses/api/unsplash.js' defer></script>
 </head>
 <body>
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
@@ -65,29 +61,53 @@
     </header>
 
     <!-- Sección de Servicios -->
-    <section id="servicios" class="py-16">
+    <section class="py-16">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold">Nuestros Servicios</h2>
             <p class="mt-4 text-gray-600">Ofrecemos una amplia gama de servicios de alta calidad para satisfacer tus necesidades.</p>
 
             <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 dark-mode">
-                <!-- Tarjeta de Servicio 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold text-gray-600">Servicio 1</h3>
-                    <p class="mt-4 text-gray-600">Descripción breve del servicio.</p>
-                </div>
-
-                <!-- Tarjeta de Servicio 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold text-gray-600">Servicio 2</h3>
-                    <p class="mt-4 text-gray-600">Descripción breve del servicio.</p>
-                </div>
-
-                <!-- Tarjeta de Servicio 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold text-gray-600">Servicio 3</h3>
-                    <p class="mt-4 text-gray-600">Descripción breve del servicio.</p>
-                </div>
+              <!-- Tarjeta de Servicio 1 -->
+              <div id="card1" class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-semibold text-gray-600">Servicio Diseño UX/UI</h3>
+                <p class="mt-4 text-gray-600">Diseñar aplicaciones, sitios web y software de manera que sean fáciles de usar y atractivos visualmente.</p>
+                <img src="" alt="">
+              </div>
+            
+              <!-- Tarjeta de Servicio 2 -->
+              <div id="card2" class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-semibold text-gray-600">Servicio Data Analytics</h3>
+                <p class="mt-4 text-gray-600">especializa en recopilar, procesar y analizar datos para obtener información valiosa que pueda ayudar a tomar decisiones informadas en una variedad de campos</p>
+                <img src="">
+              </div>
+            
+              <!-- Tarjeta de Servicio 3 -->
+              <div id="card3" class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-semibold text-gray-600">Servicio Desarrollo de App mobile</h3>
+                <p class="mt-4 text-gray-600">El desarrollo se encarga de la construcción de la aplicación utilizando tecnologías adecuadas para la plataforma objetivo. Se aseguran de que la aplicación sea robusta, eficiente y cumpla con los estándares de calidad.</p>
+                <img src="">
+              </div>
+            
+              <!-- Tarjeta de Servicio 4 -->
+              <div id="card4" class="bg-white rounded-lg shadow-lg p-6 ">
+                <h3 class="text-2xl font-semibold text-gray-600">Servicio Webshop</h3>
+                <p class="mt-4 text-gray-600">El servicio proporciona una plataforma de comercio electrónico donde las empresas pueden configurar y personalizar su tienda en línea. Esto incluye la elección de diseños, la organización de productos y la configuración de opciones de pago.</p>
+                <img src="">
+              </div>
+            
+              <!-- Tarjeta de Servicio 5 -->
+              <div id="card5" class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-semibold text-gray-600">Servicio Diseño Web</h3>
+                <p class="mt-4 text-gray-600">Los desarrolladores web codifican el sitio web utilizando tecnologías como HTML, CSS, JavaScript y otros lenguajes de programación según sea necesario. Se aseguran de que el sitio sea responsive, es decir, que se vea y funcione correctamente en dispositivos móviles y computadoras de escritorio.</p>
+                <img id="apiImg" src="" alt="">
+              </div>
+            
+              <!-- Tarjeta de Servicio 6 -->
+              <div id="card6" class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-semibold text-gray-600">Servicio Desarrollo Web a Medida</h3>
+                <p class="mt-4 text-gray-600">El desarrollo web a medida es un proceso altamente personalizado que involucra la creación de un sitio web específico según las necesidades y objetivos del cliente.</p>
+                <img src="">
+              </div>
             </div>
         </div>
     </section>
